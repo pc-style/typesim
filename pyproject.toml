@@ -1,0 +1,23 @@
+[project]
+name = "typesim"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "pc-style", email = "pcstyle@duck.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pynput>=1.7.6",
+    "google-genai>=0.2.0",
+    "rich>=13.0.0",
+    "pyyaml>=6.0",
+    "inquirer>=3.1.0",
+]
+
+[project.scripts]
+typesim = "typesim.__main__:main"
+
+[build-system]
+requires = ["uv_build>=0.9.7,<0.10.0"]
+build-backend = "uv_build"
