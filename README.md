@@ -25,7 +25,7 @@ A Python tool that simulates realistic human typing behavior - complete with typ
 
 ```bash
 # Install directly from GitHub using uv
-uv tool install git+https://github.com/YOUR_USERNAME/typesim.git
+uv tool install git+https://github.com/pc-style/typesim.git
 ```
 
 ### Development Installation
@@ -34,7 +34,7 @@ This project uses [UV](https://github.com/astral-sh/uv) for dependency managemen
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/typesim.git
+git clone https://github.com/pc-style/typesim.git
 cd typesim
 
 # Install dependencies
