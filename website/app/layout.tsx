@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "typesim - Realistic Typing Simulator",
-  description: "AI-driven realistic typing simulator for Python. Simulate human typing behavior with typos, corrections, and thinking pauses.",
+  title: "typesim - Realistic Typing Simulator | Bypass GPTZero Detection",
+  description: "AI-powered Python tool that simulates authentic human typing patterns to bypass typing analysis systems like GPTZero. Features realistic typos, corrections, natural pauses, and mid-sentence edits. Use responsibly.",
 };
 
 export default function RootLayout({

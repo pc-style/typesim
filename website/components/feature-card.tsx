@@ -8,7 +8,7 @@ interface FeatureCardProps {
 
 export function FeatureCard({ title, description, icon }: FeatureCardProps) {
   return (
-    <Card className="neo-card h-full">
+    <Card className="h-full">
       <CardHeader>
         {icon && <div className="mb-2 text-primary text-2xl">{icon}</div>}
         <CardTitle className="text-xl">{title}</CardTitle>

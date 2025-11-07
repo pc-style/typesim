@@ -1,15 +1,18 @@
 # Realistic Typing Simulator
 
-A Python tool that simulates realistic human typing behavior - complete with typos, corrections, thinking pauses, and mid-sentence edits. Perfect for making your typing look more natural and human-like.
+A Python tool that simulates realistic human typing behavior — complete with typos, corrections, thinking pauses, and mid-sentence edits. Designed to bypass typing analysis systems like GPTZero by mimicking authentic human typing patterns.
+
+**Key Use Case:** typesim is specifically designed to avoid detection systems that analyze the typing process (e.g., GPTZero typing analysis). It achieves this by varying per-character delays, inserting natural pauses, and performing human-like edits and corrections. Please use responsibly and comply with the rules of the apps and platforms where you type.
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
 
+- **Bypass Typing Analysis Systems**: Specifically designed to evade typing-process detectors like GPTZero typing analysis by simulating authentic human timing patterns, natural edits, and realistic corrections
 - **Realistic typos**: Randomly hits neighboring keys on QWERTY keyboard
 - **Automatic corrections**: Backspaces and fixes typos naturally
-- **Variable typing speed**: Randomized delays between keystrokes
+- **Variable typing speed**: Randomized delays between keystrokes with human-like rhythm
 - **Thinking pauses**: Longer pauses at sentence boundaries, commas, and paragraphs
 - **Mid-sentence edits**: Goes back to change words, insert phrases, or improve text
 - **Sentence rephrasing**: Types rephrased versions then changes back (AI-powered)

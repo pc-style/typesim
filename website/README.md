@@ -9,6 +9,7 @@ Modern landing page and documentation site for typesim, built with Next.js 15, T
 - **Neo-Brutal Design** - Sharp corners, thick borders, high contrast with magenta accent
 - **Dark Mode** - Full dark mode support with theme toggle
 - **Responsive** - Mobile-first design that works on all devices
+- **No Emojis** - All visuals use an icon library (lucide) for a professional look
 
 ## Tech Stack
 
@@ -113,6 +114,10 @@ Edit `app/globals.css` to change the color scheme:
 - Landing page: `app/page.tsx`
 - Documentation: `content/docs/*.mdx`
 - Navigation: `components/docs-layout.tsx`
+
+### Positioning
+
+The site communicates that typesim can help avoid detection systems that analyze the typing process (e.g., GPTZero typing analysis) by simulating human timing and edits. Include a brief responsible‑use note where relevant.
 
 ## License
 

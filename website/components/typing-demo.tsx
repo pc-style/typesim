@@ -30,7 +30,7 @@ export function TypingDemo({ text, speed = 50 }: TypingDemoProps) {
   }, []);
 
   return (
-    <div className="neo-border bg-card p-6 font-mono text-lg">
+    <div className="rounded-lg border bg-card p-6 font-mono text-lg shadow-lg hover:shadow-xl transition-shadow">
       <div className="min-h-[100px]">
         <span>{displayedText}</span>
         {showCursor && <span className="text-primary">|</span>}

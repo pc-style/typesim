@@ -18,9 +18,9 @@ export function CodeBlock({ code, language = 'text', filename }: CodeBlockProps)
   };
 
   return (
-    <div className="neo-border bg-card my-4">
+    <div className="rounded-lg border bg-card my-4 shadow-lg overflow-hidden">
       {filename && (
-        <div className="border-b-2 border-foreground px-4 py-2 bg-muted font-mono text-sm">
+        <div className="border-b px-4 py-2 bg-muted font-mono text-sm">
           {filename}
         </div>
       )}
@@ -30,7 +30,7 @@ export function CodeBlock({ code, language = 'text', filename }: CodeBlockProps)
         </pre>
         <button
           onClick={copyToClipboard}
-          className="absolute top-2 right-2 px-3 py-1 bg-primary text-primary-foreground text-xs font-bold hover:opacity-80 transition-opacity"
+          className="absolute top-2 right-2 px-3 py-1 rounded-md bg-primary text-primary-foreground text-xs font-semibold hover:opacity-80 transition-all shadow-md hover:shadow-lg"
         >
           {copied ? 'Copied!' : 'Copy'}
         </button>

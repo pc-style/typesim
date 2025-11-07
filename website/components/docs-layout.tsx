@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Github } from 'lucide-react';
+import { Menu, X, Github, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
 const docsNav = [
@@ -28,7 +28,7 @@ export function DocsLayout({ children }: DocsLayoutProps) {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Topbar */}
-      <header className="border-b-4 border-foreground bg-background sticky top-0 z-50">
+      <header className="border-b bg-background sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="font-bold text-xl">
             typesim
@@ -46,8 +46,9 @@ export function DocsLayout({ children }: DocsLayoutProps) {
               variant="outline"
               size="sm"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              aria-label="Toggle theme"
             >
-              {theme === 'dark' ? '☀️' : '🌙'}
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </Button>
             <Button
               variant="ghost"
@@ -65,8 +66,8 @@ export function DocsLayout({ children }: DocsLayoutProps) {
         {/* Sidebar */}
         <aside
           className={`
-            w-64 border-r-4 border-foreground bg-muted/50 p-6
-            fixed md:sticky top-[73px] h-[calc(100vh-73px)] overflow-y-auto
+            w-64 border-r bg-muted/50 p-6
+            fixed md:sticky top-[65px] h-[calc(100vh-65px)] overflow-y-auto
             ${mobileMenuOpen ? 'block' : 'hidden md:block'}
             z-40
           `}
@@ -103,4 +104,3 @@ export function DocsLayout({ children }: DocsLayoutProps) {
     </div>
   );
 }
-
