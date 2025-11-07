@@ -1,0 +1,234 @@
+# Examples
+
+## Basic Usage
+
+### Simple Typing
+
+The most basic usage - just type some text:
+
+```bash
+typesim
+# Choose option 1
+# Paste: Hello, world!
+# Press Enter
+# Switch to app
+```
+
+### Typing Code
+
+typesim works great for typing code snippets:
+
+```bash
+typesim
+# Choose option 1
+# Paste:
+def hello():
+    print("Hello, world!")
+
+hello()
+# Press Enter
+# Switch to code editor
+```
+
+## Loading from Files
+
+### Load a Text File
+
+```bash
+typesim
+# Choose option 3
+# Enter: ~/Documents/essay.txt
+# Press Enter
+# Switch to app
+```
+
+### Load Code from File
+
+```bash
+typesim
+# Choose option 3
+# Enter: ~/projects/script.py
+# Press Enter
+# Switch to editor
+```
+
+## Custom Configurations
+
+### Fast Typing
+
+For quick demos or when you're in a hurry:
+
+1. Run `typesim`
+2. Choose Settings (option 2)
+3. Set Speed Multiplier to `2.0x`
+4. Set Base Delay Min/Max to `20-50ms`
+5. Go back and start typing
+
+### Slow, Deliberate Typing
+
+For presentations or when you want to emphasize:
+
+1. Run `typesim`
+2. Choose Settings (option 2)
+3. Set Speed Multiplier to `0.5x`
+4. Set Thinking Pause to `500-1500ms`
+5. Go back and start typing
+
+### More Typos
+
+For demonstrating error correction:
+
+1. Run `typesim`
+2. Choose Settings (option 2)
+3. Set Typo Probability to `15%`
+4. Go back and start typing
+
+### AI-Powered Rephrasing
+
+For more dynamic text changes:
+
+1. Set `GEMINI_API_KEY` environment variable
+2. Run `typesim`
+3. Choose Settings (option 2)
+4. Enable "Use AI"
+5. Set Rephrase Probability to `20%`
+6. Go back and start typing
+
+## Using Presets
+
+### Quick Preset Selection
+
+```bash
+typesim
+# Press 'p' for presets
+# Choose: Natural
+# Start typing
+```
+
+Presets are pre-configured for common use cases.
+
+## Advanced Workflows
+
+### Export and Share Config
+
+Create a custom config and share it:
+
+```bash
+typesim
+# Configure settings
+# Press 'e' to export
+# Enter: my-custom-config.yaml
+# Share the file with others
+```
+
+### Import Team Config
+
+Use a shared configuration:
+
+```bash
+typesim
+# Press 'i' to import
+# Enter: team-config.yaml
+# Settings loaded!
+```
+
+### Batch Typing Multiple Files
+
+While typesim doesn't support batch mode directly, you can script it:
+
+```bash
+#!/bin/bash
+for file in *.txt; do
+    echo "Typing $file..."
+    # Manual process: run typesim, load file, type
+done
+```
+
+## Real-World Use Cases
+
+### Code Demo
+
+Demonstrating code typing in a presentation:
+
+1. Configure for natural typing speed
+2. Load your code file
+3. Start typing into your IDE
+4. Use pause/resume to control flow
+
+### Chat Simulation
+
+Making chat messages look more natural:
+
+1. Set moderate typo probability (5-10%)
+2. Use natural speed
+3. Type into chat application
+4. Let typos and corrections happen naturally
+
+### Writing Demo
+
+Showing writing process:
+
+1. Enable higher edit probability (15-20%)
+2. Enable rephrasing if AI is available
+3. Type into word processor
+4. Show natural editing behavior
+
+### Testing Accessibility
+
+Testing keyboard input handling:
+
+1. Use typesim to simulate user input
+2. Test how applications handle realistic typing
+3. Verify keyboard shortcuts work correctly
+
+## Tips and Tricks
+
+### Countdown Timing
+
+- Use 3-5 seconds countdown for most cases
+- Increase if you need more time to switch apps
+- Decrease if you're quick at switching
+
+### Speed Control
+
+- Start with default speed (1.0x)
+- Adjust during typing with +/- keys
+- Faster speeds (1.5x+) for demos
+- Slower speeds (0.5x) for emphasis
+
+### Emergency Stop
+
+Always remember: **Esc stops everything immediately**
+
+Useful if:
+- You need to stop mid-typing
+- Something goes wrong
+- You need to switch apps urgently
+
+### File Paths
+
+- Use absolute paths: `/Users/name/file.txt`
+- Use tilde expansion: `~/Documents/file.txt`
+- Relative paths work from current directory
+
+## Troubleshooting
+
+### Typing Too Fast/Slow
+
+Adjust speed multiplier in settings or use +/- during typing.
+
+### Not Enough Typos
+
+Increase typo probability in settings (try 10-15%).
+
+### Too Many Corrections
+
+Decrease edit probability or typo probability.
+
+### AI Not Working
+
+- Check `GEMINI_API_KEY` is set
+- Verify API key is valid
+- Check internet connection
+- Disable AI if not needed
+

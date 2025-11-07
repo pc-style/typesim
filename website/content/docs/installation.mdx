@@ -1,0 +1,86 @@
+# Installation
+
+## Prerequisites
+
+- **Python 3.12+** - typesim requires Python 3.12 or higher
+- **UV** - Modern Python package manager (recommended) or pip
+
+## Quick Install (UV)
+
+The recommended installation method uses UV:
+
+```bash
+uv tool install git+https://github.com/pc-style/typesim.git
+```
+
+This installs typesim globally and makes it available as a command-line tool.
+
+## Development Installation
+
+If you want to install from source or contribute:
+
+```bash
+# Clone the repository
+git clone https://github.com/pc-style/typesim.git
+cd typesim
+
+# Install dependencies
+uv sync
+
+# Or install in development mode
+uv pip install -e .
+```
+
+## Dependencies
+
+typesim uses the following dependencies:
+
+- `pynput` - For keyboard control
+- `google-genai` - For Gemini API integration (optional)
+- `rich` - For TUI interface
+- `pyyaml` - For configuration persistence
+- `inquirer` - For interactive prompts
+
+These are automatically installed when you install typesim.
+
+## Gemini API Setup (Optional)
+
+For AI-powered features like smart rephrasing and synonyms:
+
+1. Get a Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Set it as an environment variable:
+
+```bash
+export GEMINI_API_KEY="your-api-key-here"
+```
+
+Or add it to your shell configuration file (`~/.zshrc`, `~/.bashrc`, etc.):
+
+```bash
+echo 'export GEMINI_API_KEY="your-api-key-here"' >> ~/.zshrc
+```
+
+If the Gemini API is unavailable or disabled, typesim falls back to hardcoded alternatives.
+
+## macOS Permissions
+
+On macOS, you may need to grant accessibility permissions for keyboard control:
+
+1. Go to **System Settings** → **Privacy & Security** → **Accessibility**
+2. Add your terminal application (Terminal, iTerm2, etc.) to the allowed list
+3. Restart your terminal
+
+Without these permissions, typesim won't be able to simulate keyboard input.
+
+## Verify Installation
+
+After installation, verify typesim is working:
+
+```bash
+typesim --help
+# or
+uv run typesim
+```
+
+You should see the typesim main menu.
+

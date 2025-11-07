@@ -1,0 +1,104 @@
+# Configuration
+
+typesim is highly configurable. All settings can be adjusted through the TUI Settings Menu (option 2 in the main menu).
+
+## Settings Menu
+
+Access the settings menu by running typesim and selecting option 2. Settings are saved automatically when you exit the menu.
+
+## Behavior Probabilities
+
+### Typo Probability
+- **Range**: 0-50%
+- **Default**: ~5%
+- **Description**: Chance of making a typo per character. Higher values create more typos.
+
+### Edit Probability
+- **Range**: 0-100%
+- **Default**: ~10%
+- **Description**: Chance to go back and edit something mid-typing. Creates more realistic behavior.
+
+### Rephrase Probability
+- **Range**: 0-100%
+- **Default**: ~5%
+- **Description**: Chance to rephrase entire sentences (requires AI enabled). Types a rephrased version then changes back.
+
+## Timing Settings
+
+### Base Delay
+- **Range**: Min/Max in milliseconds
+- **Default**: ~50-150ms
+- **Description**: Normal typing speed range. Lower values = faster typing.
+
+### Thinking Pause
+- **Range**: Min/Max in milliseconds
+- **Default**: ~200-800ms
+- **Description**: Pause duration for "thinking" at sentence boundaries and paragraphs.
+
+### Sentence Pause
+- **Range**: Min/Max in milliseconds
+- **Default**: ~300-1000ms
+- **Description**: Additional pause at sentence ends (period, exclamation, question mark).
+
+### Comma Pause
+- **Range**: Min/Max in milliseconds
+- **Default**: ~100-300ms
+- **Description**: Brief pause at commas for natural flow.
+
+## Other Settings
+
+### Use AI
+- **Type**: Toggle (on/off)
+- **Default**: Off
+- **Description**: Enable Gemini API features for synonyms and rephrasing. Requires `GEMINI_API_KEY` environment variable.
+
+### Countdown Seconds
+- **Range**: 1-10 seconds
+- **Default**: 3 seconds
+- **Description**: Countdown duration before typing starts. Gives you time to switch to target app.
+
+### Speed Multiplier
+- **Range**: 0.1x to 5.0x
+- **Default**: 1.0x
+- **Description**: Base typing speed multiplier. Lower = slower, higher = faster.
+
+## Configuration File
+
+Settings are automatically saved to:
+
+```
+~/.typesim/config.yaml
+```
+
+You can edit this file directly if you prefer, but changes will be overwritten if you modify settings through the TUI menu.
+
+### Example Config File
+
+```yaml
+typo_probability: 0.05
+edit_probability: 0.10
+rephrase_probability: 0.05
+base_delay_min: 50
+base_delay_max: 150
+thinking_pause_min: 200
+thinking_pause_max: 800
+sentence_pause_min: 300
+sentence_pause_max: 1000
+comma_pause_min: 100
+comma_pause_max: 300
+use_ai: false
+countdown_seconds: 3
+speed_multiplier: 1.0
+```
+
+## Presets
+
+typesim includes preset configurations for common use cases:
+
+- **Fast** - Quick typing with minimal pauses
+- **Natural** - Balanced, human-like typing
+- **Slow** - Deliberate typing with longer pauses
+- **Typos** - Higher typo rate for more corrections
+
+Access presets from the main menu (option 'p').
+

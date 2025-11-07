@@ -1,0 +1,155 @@
+# API Reference
+
+typesim is primarily a command-line tool, but it can also be used as a Python library.
+
+## Command-Line Interface
+
+### Basic Usage
+
+```bash
+typesim
+```
+
+Runs the interactive TUI menu.
+
+### Command-Line Options
+
+Currently, typesim runs in interactive mode only. All configuration is done through the TUI.
+
+## Python API
+
+### Module Structure
+
+```
+typesim/
+├── __main__.py          # CLI entry point
+├── typing_engine.py     # Core typing logic
+├── keyboard_ctrl.py     # Keyboard control
+├── shortcuts.py         # Keyboard shortcuts
+├── tui.py               # Terminal UI
+├── config_manager.py    # Configuration management
+└── gemini_helper.py     # AI integration
+```
+
+### Core Functions
+
+#### `typing_engine.type_text_realistic(text: str)`
+
+Types text with all realistic behaviors enabled.
+
+```python
+from typesim import typing_engine
+
+typing_engine.type_text_realistic("Hello, world!")
+```
+
+#### `config_manager.get_config_manager()`
+
+Get the configuration manager instance.
+
+```python
+from typesim import config_manager
+
+cfg = config_manager.get_config_manager()
+typo_prob = cfg.get('typo_probability', 0.05)
+```
+
+#### `keyboard_ctrl.type_char(char: str)`
+
+Type a single character.
+
+```python
+from typesim import keyboard_ctrl
+
+keyboard_ctrl.type_char('a')
+```
+
+## Configuration Options
+
+All configuration options available through the TUI can be accessed programmatically:
+
+```python
+from typesim import config_manager
+
+cfg = config_manager.get_config_manager()
+
+# Get a setting
+value = cfg.get('typo_probability', 0.05)
+
+# Set a setting
+cfg.set('typo_probability', 0.10)
+
+# Save configuration
+cfg.save()
+```
+
+### Available Settings
+
+- `typo_probability` (float): 0.0 to 0.5
+- `edit_probability` (float): 0.0 to 1.0
+- `rephrase_probability` (float): 0.0 to 1.0
+- `base_delay_min` (int): milliseconds
+- `base_delay_max` (int): milliseconds
+- `thinking_pause_min` (int): milliseconds
+- `thinking_pause_max` (int): milliseconds
+- `sentence_pause_min` (int): milliseconds
+- `sentence_pause_max` (int): milliseconds
+- `comma_pause_min` (int): milliseconds
+- `comma_pause_max` (int): milliseconds
+- `use_ai` (bool): Enable AI features
+- `countdown_seconds` (int): 1 to 10
+- `speed_multiplier` (float): 0.1 to 5.0
+
+## Keyboard Control
+
+### `keyboard_ctrl.set_stop_flag(value: bool)`
+
+Set the stop flag to interrupt typing.
+
+```python
+from typesim import keyboard_ctrl
+
+keyboard_ctrl.set_stop_flag(True)  # Stop typing
+```
+
+### `shortcuts.setup_shortcuts_listener()`
+
+Set up keyboard shortcuts listener.
+
+```python
+from typesim import shortcuts
+
+listener = shortcuts.setup_shortcuts_listener()
+# ... typing happens ...
+shortcuts.stop_listener()
+```
+
+## Example: Programmatic Usage
+
+```python
+from typesim import typing_engine, config_manager, shortcuts, keyboard_ctrl
+
+# Configure
+cfg = config_manager.get_config_manager()
+cfg.set('typo_probability', 0.08)
+cfg.set('speed_multiplier', 1.2)
+
+# Setup shortcuts
+shortcuts.reset()
+shortcuts.set_speed_multiplier(1.2)
+listener = shortcuts.setup_shortcuts_listener()
+
+try:
+    # Type text
+    typing_engine.type_text_realistic("Hello from Python!")
+finally:
+    shortcuts.stop_listener()
+```
+
+## Notes
+
+- The Python API is primarily intended for advanced users
+- Most users should use the CLI/TUI interface
+- Keyboard control requires appropriate system permissions
+- AI features require `GEMINI_API_KEY` environment variable
+

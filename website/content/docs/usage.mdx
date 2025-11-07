@@ -1,0 +1,158 @@
+# Usage
+
+## Main Menu
+
+When you run `typesim`, you'll see the main menu:
+
+```
+1. Start Typing
+2. Settings
+3. Load from File
+4. Reset to Defaults
+p. Presets
+e. Export Config
+i. Import Config
+q. Quit
+```
+
+### Option 1: Start Typing
+
+Enter text directly and start typing simulation:
+
+1. Select option 1
+2. Paste or type your text (empty line to finish)
+3. Press Enter to start countdown
+4. **Switch to your target app** during countdown
+5. Watch the realistic typing happen!
+
+### Option 2: Settings
+
+Configure all typing behaviors. Settings are saved automatically when you exit.
+
+### Option 3: Load from File
+
+Load text from a file:
+
+1. Select option 3
+2. Enter file path (e.g., `/path/to/text.txt`)
+3. Press Enter to start countdown
+4. Switch to target app
+
+### Option 4: Reset to Defaults
+
+Reset all settings to their default values. Requires confirmation.
+
+## Keyboard Shortcuts (During Typing)
+
+While typesim is typing, you can use these shortcuts:
+
+- **Space** - Pause/Resume typing
+- **+** or **Ctrl+Plus** - Increase typing speed
+- **-** or **Ctrl+Minus** - Decrease typing speed
+- **Esc** - Stop typing completely
+
+Shortcuts are displayed when typing starts.
+
+## Workflow
+
+### Basic Workflow
+
+1. Run `typesim`
+2. Choose option from main menu
+3. Enter text (or load from file)
+4. Press Enter to start countdown
+5. **Switch to your target app** (text editor, chat, etc.)
+6. Watch the realistic typing happen!
+7. Use keyboard shortcuts to control typing
+
+### Tips
+
+- **Give yourself time**: Use the countdown to switch to your target app
+- **Test first**: Try typing into a text editor before using in important applications
+- **Adjust speed**: Use the speed controls if typing is too fast or slow
+- **Emergency stop**: Press Esc anytime to stop immediately
+
+## Loading from Files
+
+typesim can load text from any text file:
+
+```bash
+typesim
+# Choose option 3
+# Enter: /path/to/my/document.txt
+```
+
+The file is read and displayed character count. Press Enter to start typing.
+
+## Presets
+
+Quick access to common configurations:
+
+```bash
+typesim
+# Press 'p' for presets menu
+```
+
+Choose from:
+- **Fast** - Quick typing
+- **Natural** - Balanced
+- **Slow** - Deliberate
+- **Typos** - More corrections
+
+## Export/Import Config
+
+### Export Config
+
+Save your current settings to a file:
+
+```bash
+typesim
+# Press 'e' for export
+# Enter filename: my-config.yaml
+```
+
+### Import Config
+
+Load settings from a file:
+
+```bash
+typesim
+# Press 'i' for import
+# Enter filename: my-config.yaml
+```
+
+This is useful for sharing configurations or switching between different typing styles.
+
+## Examples
+
+### Basic Typing
+
+```bash
+typesim
+# Choose 1
+# Paste: Hello, this is a test!
+# Press Enter
+# Switch to app
+```
+
+### Load from File
+
+```bash
+typesim
+# Choose 3
+# Enter: ~/Documents/my-essay.txt
+# Press Enter
+# Switch to app
+```
+
+### Custom Settings
+
+```bash
+typesim
+# Choose 2 (Settings)
+# Adjust typo probability to 10%
+# Adjust speed multiplier to 0.8x
+# Press 'b' to go back (saves automatically)
+# Choose 1 to start typing
+```
+
