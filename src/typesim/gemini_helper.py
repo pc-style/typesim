@@ -8,6 +8,7 @@ from google.genai import types
 
 # global client instance
 _gemini_client = None
+DEFAULT_GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite-preview")
 
 def get_client():
     """Get or create Gemini client."""
@@ -31,7 +32,7 @@ Return ONLY a comma-separated list of words, nothing else. No explanations, no n
 Example format: word1, word2, word3"""
         
         response = client.models.generate_content(
-            model="gemini-2.0-flash-exp",
+            model=DEFAULT_GEMINI_MODEL,
             contents=prompt,
             config=types.GenerateContentConfig(temperature=0.7)
         )
@@ -61,7 +62,7 @@ Keep it natural and human-like. Return ONLY the rephrased sentence, nothing else
 Original: {sentence}"""
         
         response = client.models.generate_content(
-            model="gemini-2.0-flash-exp",
+            model=DEFAULT_GEMINI_MODEL,
             contents=prompt,
             config=types.GenerateContentConfig(temperature=0.8)
         )
@@ -88,7 +89,7 @@ Examples: "actually", "really", "kind of", "sort of", "I mean", "well", "hmm", "
 Return ONLY a comma-separated list, nothing else."""
         
         response = client.models.generate_content(
-            model="gemini-2.0-flash-exp",
+            model=DEFAULT_GEMINI_MODEL,
             contents=prompt,
             config=types.GenerateContentConfig(temperature=0.9)
         )
@@ -102,4 +103,3 @@ Return ONLY a comma-separated list, nothing else."""
         # fallback to varied list if API fails
         print(f"// gemini error getting insertions: {e}")
         return ['actually', 'really', 'kind of', 'sort of', 'I mean', 'well', 'like', 'you know', 'perhaps', 'maybe']
-

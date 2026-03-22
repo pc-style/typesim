@@ -54,6 +54,10 @@ uv pip install -e .
    ```bash
    export GEMINI_API_KEY="your-api-key-here"
    ```
+   Optional: override the default Gemini model if needed:
+   ```bash
+   export GEMINI_MODEL="gemini-3.1-flash-lite-preview"
+   ```
 3. Install dependencies:
    ```bash
    uv sync
